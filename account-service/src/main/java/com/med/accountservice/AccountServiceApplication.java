@@ -1,11 +1,13 @@
 package com.med.accountservice;
 
+import com.med.accountservice.config.RsaKeysConfig;
 import com.med.accountservice.dto.AccountRequest;
 import com.med.accountservice.enums.AccountType;
 import com.med.accountservice.service.AccountService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
@@ -13,6 +15,7 @@ import java.time.LocalDate;
 
 @SpringBootApplication
 @EnableFeignClients
+@EnableConfigurationProperties(RsaKeysConfig.class)
 public class AccountServiceApplication {
 
 	public static void main(String[] args) {

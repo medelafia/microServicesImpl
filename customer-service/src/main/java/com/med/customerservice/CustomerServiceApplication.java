@@ -1,13 +1,16 @@
 package com.med.customerservice;
 
+import com.med.customerservice.config.RsaKeysConfig;
 import com.med.customerservice.dto.CostumerRequest;
 import com.med.customerservice.service.CostumerService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties(RsaKeysConfig.class)
 public class CustomerServiceApplication {
 
     public static void main(String[] args) {
